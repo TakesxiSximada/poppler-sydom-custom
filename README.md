@@ -1,3 +1,5 @@
+# THIS REPOSITORY IS COPY OF POPPLER. ORIGINAL IS https://poppler.freedesktop.org/
+
 Poppler, a PDF rendering library
 ================================
 
