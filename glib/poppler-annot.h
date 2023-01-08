@@ -257,6 +257,8 @@ GType poppler_annot_text_get_type(void) G_GNUC_CONST;
 POPPLER_PUBLIC
 PopplerAnnot *poppler_annot_text_new(PopplerDocument *doc, PopplerRectangle *rect);
 POPPLER_PUBLIC
+PopplerAnnot *poppler_annot_text_reply_new(PopplerAnnot *poppler_annot, gchar *contents);
+POPPLER_PUBLIC
 gboolean poppler_annot_text_get_is_open(PopplerAnnotText *poppler_annot);
 POPPLER_PUBLIC
 void poppler_annot_text_set_is_open(PopplerAnnotText *poppler_annot, gboolean is_open);

@@ -1494,6 +1494,12 @@ void Annot::update(const char *key, Object &&value)
     hasBeenUpdated = true;
 }
 
+void AnnotMarkup::setInReplyTo(Ref ref)
+{
+  inReplyTo = ref;
+  update("IRT", Object(ref));
+}
+
 void Annot::setContents(std::unique_ptr<GooString> &&new_content)
 {
     annotLocker();

@@ -147,6 +147,7 @@ PopplerAttachment *_poppler_attachment_new(FileSpec *file);
 PopplerMovie *_poppler_movie_new(const Movie *movie);
 PopplerMedia *_poppler_media_new(const MediaRendition *media);
 PopplerAnnot *_poppler_annot_new(Annot *annot);
+PopplerAnnot *_poppler_annot_text_reply_new(Annot *annot, gchar *contents);
 PopplerAnnot *_poppler_annot_text_new(Annot *annot);
 PopplerAnnot *_poppler_annot_free_text_new(Annot *annot);
 PopplerAnnot *_poppler_annot_text_markup_new(Annot *annot);

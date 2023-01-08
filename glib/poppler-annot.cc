@@ -1516,6 +1516,7 @@ gboolean poppler_annot_text_get_is_open(PopplerAnnotText *poppler_annot)
 
 /**
  * poppler_annot_text_set_is_open:
+
  * @poppler_annot: a #PopplerAnnotText
  * @is_open: whether annotation should initially be displayed open
  *
@@ -2198,4 +2199,28 @@ gboolean poppler_annot_stamp_set_custom_image(PopplerAnnotStamp *poppler_annot, 
     annot->setCustomImage(annot_image_helper);
 
     return TRUE;
+}
+
+/**
+ * poppler_annot_text_reply_new:
+ * @poppler_annot: a #PopplerAnnotStamp
+ * @contents: a text string containing the contents
+ *
+ * Return value: a new allocated PopplerAnnot. It must be freed with g_free() when done.
+ *
+ * Since: 23.07.0 - custom
+ */
+PopplerAnnot *poppler_annot_text_reply_new(PopplerAnnot *poppler_annot, gchar *contents)
+{
+  PopplerAnnot *new_poppler_annot;
+  AnnotText *annot;
+  PDFRectangle rect;
+
+  rect = poppler_annot->annot->getRect();
+  annot = new AnnotText(poppler_annot->annot->getDoc(), &rect);
+
+  new_poppler_annot = _poppler_annot_text_new(annot);
+  poppler_annot_set_contents(new_poppler_annot, contents);
+  annot->setInReplyTo(poppler_annot->annot->getRef());
+  return new_poppler_annot;
 }

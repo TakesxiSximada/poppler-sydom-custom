@@ -534,6 +534,7 @@ poppler_annot_text_markup_set_quadrilaterals
 poppler_annot_text_new
 poppler_annot_text_set_icon
 poppler_annot_text_set_is_open
+poppler_annot_text_reply_new
 
 <SUBSECTION Standard>
 POPPLER_ANNOT

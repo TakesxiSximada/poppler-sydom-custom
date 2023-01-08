@@ -888,6 +888,7 @@ public:
     void setLabel(std::unique_ptr<GooString> &&new_label);
     void setOpacity(double opacityA);
     void setDate(GooString *new_date);
+    void setInReplyTo(Ref ref);
 
 protected:
     void removeReferencedObjects() override;
